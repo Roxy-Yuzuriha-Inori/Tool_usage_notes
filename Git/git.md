@@ -161,4 +161,19 @@ faster-forward图示
 结果：强制删除该分支
 
 ## 4.6多人协作
-命令：
+1. 将本地commit的分支提交到远程分支
+命令：git push origin master
+说明：origin（远程分支名，git remote查看） master（本地分支名，git branch查看）
+
+2. 抓取分支
+命令：git clone git@github.com:michaelliao/learngit.git
+说明：克隆master分支
+
+命令：git checkout -b dev origin/dev
+说明：在本地创建一个分支dev对应远程的分支dev 
+
+3. 推送分支时发生冲突
+将本地分支dev与远程分支对应    $ git branch --set-upstream-to=origin/dev dev
+用git pull从最新的提交从origin/dev抓下来，
+然后，在本地合并，解决冲突，
+再推送：
