@@ -84,6 +84,10 @@ HEAD指向的是当前的分支，Master指向的是最新提交的分支
 5. 删除分支
 命令：git branch -d dev 
 
+6. 查看远程仓库信息
+命令：git remote
+结果：显示远程仓库的名字，详细信息$ git remote -v
+
 faster-forward图示
                            HEAD
                              │
@@ -151,3 +155,10 @@ faster-forward图示
 [issue-101 4c805e2] fix bug 101}里面的```4c805e2```，
 把bug提交的修改“复制”到当前分支，避免重复劳动。并且此命令会做一次对dev分支的提交
 
+## 4.5Feature分支
+一般新功能在master的分支dev再建一个分支Feature，没有合并该分支并且想要将其删除
+命令：git branch -D <name>
+结果：强制删除该分支
+
+## 4.6多人协作
+命令：
