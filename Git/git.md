@@ -170,7 +170,7 @@ faster-forward图示
 说明：克隆master分支
 
 命令：git checkout -b dev origin/dev
-说明：在本地创建一个分支dev对应远程的分支dev 
+说明：在本地创建一个分支dev对应远程的分支dev ，若没发生冲突可以继续修改提交
 
 3. 推送分支时发生冲突
 将本地分支dev与远程分支对应    $ git branch --set-upstream-to=origin/dev dev
