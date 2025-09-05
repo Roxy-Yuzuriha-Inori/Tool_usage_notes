@@ -176,4 +176,4 @@ faster-forward图示
 将本地分支dev与远程分支对应    $ git branch --set-upstream-to=origin/dev dev
 用git pull从最新的提交从origin/dev抓下来，
 然后，在本地合并，解决冲突，
-再推送：
+再推送
