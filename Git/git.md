@@ -177,3 +177,44 @@ faster-forward图示
 用git pull从最新的提交从origin/dev抓下来，这个命令执行后会本地合并代码，有冲突显示出来，需要手动解决然后再推送
 
 ## 4.7Rebase
+关联远程仓库，用在推送分支时发生冲突，git pull后解决冲突提交后，使用git rebase将合并的分叉变成直线，然后推送
+
+### 标签管理
+标签tag，版本库的快照号，与某个commit绑定在一起
+## 标签创建
+1. 打标签
+命令：git tag <标签名>
+
+2. 指定commit打标签
+命令：git tag <tagname> f52c633
+
+   添加更多信息
+命令：git tag -a <tagname> -m "version 0.1 released" 1094adb
+说明：-a指定标签名，-m指定说明文字
+
+3. 查看所有标签
+命令：git tag
+
+4. 查看标签说明
+命令：git show <tagname>
+
+## 标签操作
+1. 删除本地标签
+命令：git tag -d <tagname>
+
+2. 推送标签到远程仓库
+命令：git push origin v1.0
+   一次性推送全部标签
+命令：git push origin --tags
+
+3. 删除远程标签
+命令：$ git tag -d <tagname>（删除本地）+ $ git push origin :refs/tags/<tagname>
+
+### 自定义git
+## 配置别名
+命令：$ git config --global alias.别名 原命令名
+例：$ git config --global alias.co checkout
+   $ git config --global alias.unstage 'reset HEAD'
+   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+>在配置文件.git/config（每个仓库）.gitconfig（当前用户）中的[alias]后可以配置别名
