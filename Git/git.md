@@ -174,6 +174,6 @@ faster-forward图示
 
 3. 推送分支时发生冲突
 将本地分支dev与远程分支对应    $ git branch --set-upstream-to=origin/dev dev
-用git pull从最新的提交从origin/dev抓下来，
-然后，在本地合并，解决冲突，
-再推送
+用git pull从最新的提交从origin/dev抓下来，这个命令执行后会本地合并代码，有冲突显示出来，需要手动解决然后再推送
+
+## 4.7Rebase
