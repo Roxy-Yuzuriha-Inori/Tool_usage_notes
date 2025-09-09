@@ -88,6 +88,14 @@ HEAD指向的是当前的分支，Master指向的是最新提交的分支
 命令：git remote
 结果：显示远程仓库的名字，详细信息$ git remote -v
 
+7. 要查看本地分支与远程分支的关联情况
+命令：git branch -vv
+
+8.对当前分支重命名
+命令：git branch -m 新分支名
+  对指定分支重命名
+命令：git branch -m 旧分支名 新分支名
+
 faster-forward图示
                            HEAD
                              │
