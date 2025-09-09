@@ -84,6 +84,18 @@ HEAD指向的是当前的分支，Master指向的是最新提交的分支
 5. 删除分支
 命令：git branch -d dev 
 
+6. 查看远程仓库信息
+命令：git remote
+结果：显示远程仓库的名字，详细信息$ git remote -v
+
+7. 要查看本地分支与远程分支的关联情况
+命令：git branch -vv
+
+8.对当前分支重命名
+命令：git branch -m 新分支名
+  对指定分支重命名
+命令：git branch -m 旧分支名 新分支名
+
 faster-forward图示
                            HEAD
                              │
@@ -151,3 +163,66 @@ faster-forward图示
 [issue-101 4c805e2] fix bug 101}里面的```4c805e2```，
 把bug提交的修改“复制”到当前分支，避免重复劳动。并且此命令会做一次对dev分支的提交
 
+## 4.5Feature分支
+一般新功能在master的分支dev再建一个分支Feature，没有合并该分支并且想要将其删除
+命令：git branch -D <name>
+结果：强制删除该分支
+
+## 4.6多人协作
+1. 将本地commit的分支提交到远程分支
+命令：git push origin master
+说明：origin（远程分支名，git remote查看） master（本地分支名，git branch查看）
+
+2. 抓取分支
+命令：git clone git@github.com:michaelliao/learngit.git
+说明：克隆master分支
+
+命令：git checkout -b dev origin/dev
+说明：在本地创建一个分支dev对应远程的分支dev ，若没发生冲突可以继续修改提交
+
+3. 推送分支时发生冲突
+将本地分支dev与远程分支对应    $ git branch --set-upstream-to=origin/dev dev
+用git pull从最新的提交从origin/dev抓下来，这个命令执行后会本地合并代码，有冲突显示出来，需要手动解决然后再推送
+
+## 4.7Rebase
+关联远程仓库，用在推送分支时发生冲突，git pull后解决冲突提交后，使用git rebase将合并的分叉变成直线，然后推送
+
+### 标签管理
+标签tag，版本库的快照号，与某个commit绑定在一起
+## 标签创建
+1. 打标签
+命令：git tag <标签名>
+
+2. 指定commit打标签
+命令：git tag <tagname> f52c633
+
+   添加更多信息
+命令：git tag -a <tagname> -m "version 0.1 released" 1094adb
+说明：-a指定标签名，-m指定说明文字
+
+3. 查看所有标签
+命令：git tag
+
+4. 查看标签说明
+命令：git show <tagname>
+
+## 标签操作
+1. 删除本地标签
+命令：git tag -d <tagname>
+
+2. 推送标签到远程仓库
+命令：git push origin v1.0
+   一次性推送全部标签
+命令：git push origin --tags
+
+3. 删除远程标签
+命令：$ git tag -d <tagname>（删除本地）+ $ git push origin :refs/tags/<tagname>
+
+### 自定义git
+## 配置别名
+命令：$ git config --global alias.别名 原命令名
+例：$ git config --global alias.co checkout
+   $ git config --global alias.unstage 'reset HEAD'
+   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+>在配置文件.git/config（每个仓库）.gitconfig（当前用户）中的[alias]后可以配置别名
