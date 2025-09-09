@@ -1,6 +1,6 @@
 # 1.安装git
 Git Bash
-PowerShell  git -v
+PowerShell  git -v  查看安装版本
 ## 配置git
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
@@ -95,7 +95,7 @@ HEAD指向的是当前的分支，Master指向的是最新提交的分支
 命令：git branch -m 新分支名
   对指定分支重命名
 命令：git branch -m 旧分支名 新分支名
-
+```
 faster-forward图示
                            HEAD
                              │
@@ -108,9 +108,11 @@ faster-forward图示
 └───┘    └───┘    └───┘    └───┘
                              ▲
                              │
+```
 ## 4.2分支冲突
 问题：分支和master都有修改，然后进行merge
 结果：merge成功就自动提交；merge冲突就不提交，标记冲突的地方，然后要对本机文件进行修改然后add，commit
+```
 
                             HEAD
                               │
@@ -128,10 +130,12 @@ faster-forward图示
                               ▲
                               │
                           feature
+```
 ## 4.3分支管理策略
 问题：通常合并时是Fast forward模式,在这种模式下，是将Master指向了分支Dev，然后删除了分支Dev，而我希望保留分支Dev的版本，重新提交一个分支让Master指向该分支
 命令：git merge --no-ff -m "merge with no-ff" dev
 结果：注意--no-ff 和 -m参数 
+```
                                 HEAD
                                   │
                                   ▼
@@ -148,6 +152,7 @@ faster-forward图示
                               ▲
                               │
                              dev
+```
 ## 4.4Bug分支
 问题：在分支的任务还未完成的情况下，需要提交一个临时的改动，比如bug。此时我不想提交Master做了一半的任务，但又得提交bug的修改
 解决：可以先把工作现场git stash一下，然后在某个分支创建新分支修复bug，修复后，回到原来分支然后
