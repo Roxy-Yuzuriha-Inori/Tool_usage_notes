@@ -223,7 +223,7 @@ faster-forward图示
 3. 删除远程标签
 命令：$ git tag -d <tagname>（删除本地）+ $ git push origin :refs/tags/<tagname>
 
-# 自定义git
+# 5.自定义git
 ## 配置别名
 命令：$ git config --global alias.别名 原命令名
 例：$ git config --global alias.co checkout
