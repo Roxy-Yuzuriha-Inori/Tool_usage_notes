@@ -1,11 +1,11 @@
-### 1.安装git
+# 1.安装git
 Git Bash
 PowerShell  git -v
 ## 配置git
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
-### 2.创建版本库
+# 2.创建版本库
 1. 选择一个文件夹创建版本库   
    命令：git init
    结果：多出.git初始化文件仓库成功
@@ -46,7 +46,7 @@ $ git config --global user.email "email@example.com"
    命令：git rm file
    结果：删除file，并把删除file后的这个工作区版本放到暂存区
 
-### 3.远程仓库
+# 3.远程仓库
 1. 创建SSH Key
 命令：在git Bash下$ ssh-keygen -t rsa -C "youremail@example.com"
 结果：在用户名.ssh目录下会生成id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
@@ -61,7 +61,7 @@ $ git config --global user.email "email@example.com"
 命令：git clone git@github.com:Roxy-Yuzuriha-Inori/learn_git.git
 结果：在打开gitBash的路径下克隆的是个文件，里面包含.git等
 
-### 4.分支管理
+# 4.分支管理
 ## 4.1创建与合并分支
 HEAD指向的是当前的分支，Master指向的是最新提交的分支
 我创建一个分支DEV，然后对代码进行修改，我的HEAD指向的是DEV，每次可以提交一部分，改完再和Master分支进行合并，不影响别人代码开发
