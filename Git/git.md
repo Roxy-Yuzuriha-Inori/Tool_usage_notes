@@ -95,6 +95,9 @@ HEAD指向的是当前的分支，Master指向的是最新提交的分支
 命令：git branch -m 新分支名
   对指定分支重命名
 命令：git branch -m 旧分支名 新分支名
+
+9.创建本地分支并关联远程分支
+命令：git checkout -b 本地分支名 origin（远程仓库名）/远程分支
 ```
 faster-forward图示
                            HEAD
