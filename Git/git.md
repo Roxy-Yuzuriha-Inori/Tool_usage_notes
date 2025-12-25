@@ -61,6 +61,12 @@ $ git config --global user.email "email@example.com"
 命令：git clone git@github.com:Roxy-Yuzuriha-Inori/learn_git.git
 结果：在打开gitBash的路径下克隆的是个文件，里面包含.git等
 
+5. 没有本地仓库。克隆远程仓库某个分支
+命令：git clone --branch master <远程仓库地址>
+结果：克隆仓库
+检出 master 分支
+默认跟踪 origin/master
+
 # 4.分支管理
 ## 4.1创建与合并分支
 HEAD指向的是当前的分支，Master指向的是最新提交的分支
