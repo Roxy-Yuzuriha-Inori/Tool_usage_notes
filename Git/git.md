@@ -67,6 +67,11 @@ $ git config --global user.email "email@example.com"
 检出 master 分支
 默认跟踪 origin/master
 
+6.将本地分支切换另一个远程分支
+git branch -u 远程分支
+
+
+
 # 4.分支管理
 ## 4.1创建与合并分支
 HEAD指向的是当前的分支，Master指向的是最新提交的分支
