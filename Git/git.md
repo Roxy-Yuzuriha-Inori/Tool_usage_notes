@@ -70,7 +70,11 @@ $ git config --global user.email "email@example.com"
 6.将本地分支切换另一个远程分支
 git branch -u 远程分支
 
+7.查看远程仓库分支
+git branch -r
 
+8.本地同步远程仓库分支
+git fetch origin
 
 # 4.分支管理
 ## 4.1创建与合并分支
